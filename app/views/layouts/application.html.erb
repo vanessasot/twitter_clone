@@ -11,16 +11,19 @@
   </head>
 
   <body>
-    <% if flash[:notice] %>
-      <div class="notification is-primary global-notification">
-        <p class="notice"><%= notice %></p>
+    <% if alert.present? %>
+      <div class="alert alert-warning" role="alert">
+        <p><%= alert %> </p>
       </div>
     <% end %>
-    <% if flash[:alert] %>
-      <div class="notification is-danger global-notification">
-        <p class="alert"><∞= alert %></p>
+    
+    <% if notice.present? %>
+      <div class="alert alert-info" role="alert">
+        <p><%= notice %> </p>
       </div>
     <% end %>
+    
+    <%= render partial: "shared/navbar" %>
     
     <%= yield %>
   </body>

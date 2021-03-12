@@ -76,4 +76,6 @@ Rails.application.configure do
   
   #Devise default url
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
+  
+  config.hosts << "48ff4128061e41a9b53c20a8b518fce9.vfs.cloud9.us-east-2.amazonaws.com"
 end
