@@ -21,4 +21,20 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+* You can download the repository with this command `git clone` https://github.com/vanessasot/twitter_clone
+
+* Run the server with the `rails s` command
+
+* Register your username
+
+* You can change the password
+
+* You can change the email
+
+* Create a new tweet
+
+* View tweets
+
+* You can login
+
+* You can log out
