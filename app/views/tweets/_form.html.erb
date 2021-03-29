@@ -1,0 +1,6 @@
+<%= form_with(model: @tweet, local: true) do |f| %>
+    <%= render "errors" %>
+
+    <%= f.text_area :tweet, class: "form-control", placeholder: "What's happening" %>
+    <%= f.submit "Tweet", class: "btn btn-primary" %>
+<% end %>

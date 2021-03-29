@@ -7,7 +7,10 @@
   </head>
 
   <body>
-    
-    <p>Hello world!</p>
+  <% if user_signed_in? %>
+    <%= controller.redirect_to tweets_path %>
+  <% else %>
+    <%= render partial: "home" %>
+  <% end %>    
   </body>
 </html>

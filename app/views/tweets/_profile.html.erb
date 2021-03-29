@@ -1,0 +1,13 @@
+<%= @user.name %>
+@<%= @user.username %>
+<%= @user.tweets.count %>Tweets
+<%= @user.following.count %>
+<%= link_to 'Following', following_user_path(@user.id), class: "btn btn-outline-info btn-sm" %>
+<%= @user.followers.count %>
+<%= link_to 'Followers', followers_user_path(@user.id), class: "btn btn-outline-info btn-sm" %><br/>
+<% if current_user.following?(@user) == false && current_user != @user %>
+  <%= form_for(current_user.active_relationships.build) do |f| %>
+    <%= hidden_field_tag :followed_id, @user.id %>
+    <%= f.submit "Follow", class: "btn btn-primary btn-sm" %>
+  <% end %>
+<% end %>

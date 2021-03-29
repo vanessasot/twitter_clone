@@ -1,0 +1,6 @@
+
+<% if @tweet.errors.any? %>
+    <% @tweet.errors.each do |error| %>
+        <%= error.full_message %>
+    <% end %>
+<% end %>

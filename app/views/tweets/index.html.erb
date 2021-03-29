@@ -1,0 +1,4 @@
+<%= render partial: "shared/navbar_lateral" %>
+<%= render "profile", locals: {user: @user} %>
+<%= render "feed" %>
+<%= will_paginate @tweets %>
