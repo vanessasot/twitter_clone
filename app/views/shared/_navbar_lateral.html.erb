@@ -1,6 +1,6 @@
-<%= link_to "Home", root_path %>
+<%= link_to "Home", tweets_path %>
 
-<%= link_to "Profile", user_path(current_user.id) %><br/>
+<%= link_to "Profile", user_path(current_user.username) %><br/>
 <%= current_user.name %>
 @<%= current_user.username %>
 

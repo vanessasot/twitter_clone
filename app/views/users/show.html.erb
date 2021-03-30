@@ -1,4 +1,5 @@
-
-    <%= @user.name %>
-    <%= @user.username %>
-    <%= link_to('New Tweet', tweets_path) %>
+<%= render partial: "tweets/profile", locals: {user: @user} %>
+<%= render partial: "tweets/follow_button", locals: {user: @user} %>
+<%= render "user_feed", locals: {tweets: @tweets} %>
+<%= will_paginate @tweets %>
+<%= link_to 'Home', tweets_path %>

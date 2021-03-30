@@ -3,13 +3,13 @@ class RelationshipsController < ApplicationController
     def create
       user = User.find(params[:followed_id])
       current_user.follow(user)
-      redirect_to user_path(user), notice: "You are now following @#{user.username}"
+      redirect_to user_path(user.username), notice: "You are now following @#{user.username}"
     end
   
     def destroy
       user = Relationship.find(params[:id]).followed
       current_user.unfollow(user)
-      redirect_to user_path(user), notice: "You have left following @#{user.username}"
+      redirect_to user_path(user.username), notice: "You have left following @#{user.username}"
     end
   
   end

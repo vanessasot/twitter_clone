@@ -1,8 +1,6 @@
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
          
   has_many :tweets, dependent: :delete_all # Remove a user's tweets if his account is deleted
   has_many :active_relationships, class_name: "Relationship", foreign_key: "follower_id", dependent: :destroy
@@ -10,6 +8,9 @@ class User < ApplicationRecord
   
   has_many :following, through: :active_relationships, source: :followed
   has_many :followers, through: :passive_relationships, source: :follower
+
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable
 
   validates :username, presence: true, uniqueness: true
   validates :email, presence: true, uniqueness: true, format: { with: /\A[^@\s]+@[^@\s]+\z/, message: "Must be a valid email address" }

@@ -1,18 +1,15 @@
-<%= render "form" %>
-
 <% @tweets.each do |tweet| %>
     <%= tweet.user.name %>
     @<%= tweet.user.username %>
     <%= tweet.created_at.getlocal.strftime("%d %b. %Y %I:%M %P") %>
     <%= tweet.tweet %>
-    
+
     <% if user_signed_in? && current_user.id == tweet.user_id %>
         <%= link_to tweet, class: "level-item" do %>
             <p>See tweet</p>
         <% end %>
-
         <%= link_to tweet, method: :delete, data: { confirm: "Are you sure you want to delete this tweeet?" } do %>
             <p>Delete tweet</p>
         <% end %>
     <% end %>
-    <% end %>
+<% end %>
