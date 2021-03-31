@@ -10,6 +10,9 @@ Rails.application.routes.draw do
       resources :followings, only: [:index]
       resources :followers, only: [:index]
   end
+
+  get 'searching_for', to: 'users#searching_for'
+  post 'searching_for', to: 'users#searching_for'
   
   resources :relationships
 

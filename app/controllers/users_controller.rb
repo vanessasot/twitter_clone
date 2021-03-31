@@ -5,7 +5,7 @@ class UsersController < ApplicationController
        @tweets = @user.tweets.paginate(page: params[:page], per_page: 10)
     end
 
-    def searching
+    def searching_for
         if params[:followed].present?
           @search_for = User.find_by(username: params[:followed])
           if @search_for != current_user

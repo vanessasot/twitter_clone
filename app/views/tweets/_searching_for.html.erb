@@ -1,0 +1,6 @@
+<% if user_signed_in? %>
+  <%= form_with(url: searching_for_path, local: true) do |f| %>
+    <%= f.text_field :followed, class: "input", type: "text", placeholder: "Search user to follow", required: true %>
+    <%= f.submit "Follow", class: "button is-info" %>
+  <% end %>
+<% end %>
