@@ -1,31 +1,23 @@
-# README
+# Twitter Clone
+This application allows you to create users, have followers and followed and create tweets.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Installation, Init and Usage
 
-Things you may want to cover:
+* Clone the repository with this command `git clone` https://github.com/vanessasot/twitter_clone
 
-* Ruby version
+* Go to the folder: `cd twitter_clone`
 
-* System dependencies
+* Install requirements `bundle`
 
-* Configuration
+* Create the data base `rails db:create`
 
-* Database creation
+* Run the migrations `rails db:migrate`
 
-* Database initialization
+* Run the server with the `rails s -b 0.0.0.0` command
 
-* How to run the test suite
+Get into the URL `127.0.0.1:3000` to start the web app
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* You can download the repository with this command `git clone` https://github.com/vanessasot/twitter_clone
-
-* Run the server with the `rails s` command
-
-* Register your username
+* Create a new account
 
 * You can change the password
 
